@@ -29,15 +29,29 @@ body nav{
     color: #00bcd4;
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+.modal {
+    display: none; /* caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
+.contenu-modal {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+
+label {
+  display: block;
+}
+
+input[type="submit"],
+label {
+  margin-top: 1rem;
 }
