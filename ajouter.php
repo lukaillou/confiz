@@ -1,7 +1,6 @@
 <?php
 require_once "db.php";
 
-// Si le formulaire est envoyé
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $titre = $_POST["titre"] ?? null;
