@@ -3,7 +3,7 @@ const ouvrir = document.getElementById("ouvrirModal");
 const fermer = document.getElementById("fermerModal");
 
 ouvrir.addEventListener("click", () => {
-    modal.style.display = "block";
+    modal.style.display = "flex";
 });
 
 fermer.addEventListener("click", () => {

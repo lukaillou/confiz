@@ -11,11 +11,13 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Confiz</div>
+            <div class="logo"><img src="./img/logo_confiz.png" alt="logo Confiz"></div>
             <ul class="nav-links">
                 <li><a href="./index.php">Accueil</a></li>
                 <li><a href="./boutiques.php">Boutiques</a></li>
-                <li><a href="./connexion.php">Connexion</a></li>
+                <li><a href="./connexion.php">Confiseries</a></li>
+            </ul>
+            <ul class = "contact">
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
