@@ -121,6 +121,97 @@ label {
 
 footer {
     background-color: #AAD1E8;
+    padding: 1.5em 2em 1em;
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-contenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-gauche {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.footer-gauche img {
+    height: 70px;
+    width: auto;
+}
+
+.footer-reseaux {
+    display: flex;
+    gap: 2em;
+}
+
+.footer-lien {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.footer-lien img {
+    height: 28px;
+    width: auto;
+}
+
+.footer-droite {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    max-width: 33%;
+}
+
+.footer-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #aaa;
+    border-radius: 50px;
+    background: white;
+    padding: 0.3em 0.6em;
+}
+
+.footer-form input {
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 0.4em 0.6em;
+    background: transparent;
+}
+
+.footer-form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #555;
+    padding: 0 0.4em;
+}
+
+.footer-poulet {
+    height: 120px;
+    width: auto;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #aaa;
+    margin: 1em 0 0.5em;
+}
+
+.footer-copy {
     text-align: center;
-    padding: 11rem;
+    font-size: 0.8rem;
+    color: #555;
+    margin: 0;
+    padding-bottom: 0.5em;
 }
