@@ -8,19 +8,18 @@ include_once("bdd.php");
     <div class="hero">
         <h1>Que recherchez vous ?</h1>
     </div>
-    <?php
-    foreach ($data as $elem) {
-        ?>
+    <div class="columns">
+        <?php
+        foreach ($boutiques as $elem) {
+            ?>
 
-        <div class="card">
-            <div class="card-contenu">
-                <h3 class="card-titre"></h3>
-                    
+            <div class="card">
+                <div class="card-contenu">
+                    <h3 class="card-titre"></h3>
+
                     <p>Nom :
                         <?php echo ($elem["nom"]); ?>
                     </p>
-
-
 
                     <p class="card-description"></p>
 
@@ -28,7 +27,8 @@ include_once("bdd.php");
                 </div>
                 <img src="./img/placeholder.png" alt="placeholder" class="card-img">
             </div>
-    <?php } ?>
+        <?php } ?>
+    </div>
 
 </main>
 

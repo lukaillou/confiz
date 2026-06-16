@@ -1,4 +1,6 @@
 <?php
 include_once("db.php");
-$data = dbquery("SELECT * FROM boutiques");
+$boutiques = dbquery("SELECT * FROM boutiques");
+$confiseries = dbquery("SELECT * FROM confiseries");
+$utilisateurs = dbquery("SELECT * FROM utilisateurs");
 ?>
