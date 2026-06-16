@@ -10,6 +10,7 @@
 
 <body>
     <header>
+        <img src="./img/placeholder.png" alt="bannière" class="header-banner">
         <nav class="navbar">
             <div class="logo"><img src="./img/logo_confiz.png" alt="logo Confiz"></div>
             <ul class="nav-links">
