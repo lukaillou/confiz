@@ -32,6 +32,6 @@
     </div>
 </main>
 
-<script src="./js/script.js"></script>
+<script type="module" src="./js/script.js"></script>
 
 <?php include_once("./footer.php") ?>
