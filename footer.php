@@ -4,15 +4,15 @@
             <img src="./img/logo_confiz.png" alt="Logo Confiz">
             <div class="footer-reseaux">
                 <div class="footer-lien">
-                    <a href="#"><img src="./img/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="./img/icons/instagram.svg" alt="Instagram"></a>
                     <span>Instagram</span>
                 </div>
                 <div class="footer-lien">
-                    <a href="#"><img src="./img/facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="./img/icons/facebook.svg" alt="Facebook"></a>
                     <span>Facebook</span>
                 </div>
                 <div class="footer-lien">
-                    <a href="#"><img src="./img/mail.svg" alt="Mail"></a>
+                    <a href="#"><img src="./img/icons/mail.svg" alt="Mail"></a>
                     <span>Mail</span>
                 </div>
             </div>
