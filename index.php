@@ -2,7 +2,7 @@
 
 <main>
     <div class="hero">
-        <img src="./img/logo_confiz.png" alt="Logo Confiz">
+        <div class = "logo"><img src="./img/logo_confiz.png" alt="Logo Confiz"></div>
         <h1>Bienvenue sur le Site Confiz !</h1>
     </div>
 

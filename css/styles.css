@@ -7,7 +7,6 @@ body {
     min-height: 100vh;
 }
 
-
 header {
     position: relative;
     width: 100%;
@@ -18,7 +17,6 @@ header {
     height: 200px;
     object-fit: cover;
     display: block;
-    margin: 0;
 }
 
 .navbar {
@@ -27,14 +25,12 @@ header {
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border-radius: 10em;
     padding: 0.8em 1em;
-    color: black;
     opacity: 95%;
 }
 
@@ -43,8 +39,7 @@ header {
     width: auto;
 }
 
-.nav-links,
-.contact {
+.nav-links, .contact {
     list-style: none;
     display: flex;
     gap: 2em;
@@ -58,38 +53,29 @@ header {
     transform: translateX(-50%);
 }
 
-.nav-links a,
-.contact a {
+.nav-links a, .contact a {
     text-decoration: none;
     color: black;
     transition: color 0.3s;
 }
 
-.nav-links a:hover,
-.contact a:hover {
+.nav-links a:hover, .contact a:hover {
     color: #00bcd4;
 }
 
 main {
     margin: 50px;
-    display: flex;
     flex: 1;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .hero {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1.5em;
     width: 100%;
-}
-
-.hero img {
-    height: 100px;
-    width: auto;
 }
 
 .connexion {
@@ -104,8 +90,6 @@ main {
 
 .qui-sommes-nous {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     gap: 1em;
     max-width: 70%;
     margin-top: 2em;
@@ -136,13 +120,29 @@ label {
     margin-top: 1rem;
 }
 
+#liste-confiseries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2em;
+}
+
 .card {
-    background: white;
+    background: #2B928B;
+    color: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     width: 220px;
-    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover{
+    background: #124541;
+    transform: scale(1.05);
 }
 
 .card-img {
@@ -153,8 +153,6 @@ label {
 
 .card-contenu {
     padding: 1em;
-    display: flex;
-    flex-direction: column;
 }
 
 footer {
@@ -230,7 +228,6 @@ footer {
     cursor: pointer;
     font-size: 1.1rem;
     color: #787575;
-    padding: 0 0.4em;
 }
 
 .footer-poulet {
