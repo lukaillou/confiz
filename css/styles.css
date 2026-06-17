@@ -143,6 +143,7 @@ label {
 .card:hover{
     background: #124541;
     transform: scale(1.05);
+    transition: 500ms;
 }
 
 .card-img {

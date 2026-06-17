@@ -16,7 +16,7 @@
             <ul class="nav-links">
                 <li><a href="./index.php">Accueil</a></li>
                 <li><a href="./boutiques.php">Boutiques</a></li>
-                <li><a href="./connexion.php">Confiseries</a></li>
+                <li><a href="./confiseries.php">Confiseries</a></li>
             </ul>
             <ul class = "contact">
                 <li><a href="#">Contact</a></li>
