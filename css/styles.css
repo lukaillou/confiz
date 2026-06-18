@@ -39,7 +39,7 @@ header {
     width: auto;
 }
 
-.nav-links, .contact {
+.nav-links {
     list-style: none;
     display: flex;
     gap: 2em;
@@ -53,13 +53,15 @@ header {
     transform: translateX(-50%);
 }
 
-.nav-links a, .contact a {
+.nav-links a,
+.connexion a,
+.deconnexion a  {
     text-decoration: none;
     color: black;
     transition: color 0.3s;
 }
 
-.nav-links a:hover, .contact a:hover {
+.nav-links a:hover{
     color: #00bcd4;
 }
 
@@ -79,6 +81,7 @@ main {
 }
 
 .connexion {
+    text-decoration: none;
     border-radius: 50px;
     background-color: #D269FF;
     border: none;
@@ -97,22 +100,6 @@ main {
 
 .qui-sommes-nous h2 {
     min-width: 240px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.contenu-modal {
-    background: #D269FF;
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
 }
 
 label {
@@ -154,6 +141,11 @@ label {
 
 .card-contenu {
     padding: 1em;
+}
+
+.card-contenu a{
+    text-decoration: none;
+    color: white;
 }
 
 footer {
