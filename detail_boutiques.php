@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once("./header.php");
 include_once("bdd.php");
 
@@ -14,7 +14,7 @@ $boutique = dbquery("SELECT * FROM boutiques WHERE id = ?", [$id]);
     <div id="liste-confiseries">
         <div class="card">
             <div class="card-contenu">
-                <h3><?php echo $boutique[0]["nom"]; ?></h3>
+                <h3><a href="./confiseries.php"><?php echo $boutique[0]["nom"]; ?></a></h3>
             </div>
             <img src="./img/placeholder.png" alt="placeholder" class="card-img">
         </div>

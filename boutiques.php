@@ -7,7 +7,7 @@ include_once("bdd.php");
         <h1>Quelle boutique recherchez vous ?</h1>
     </div>
      <div class="hero">
-     <p>séléctionnez une boutique</p>
+     <p>Séléctionnez une boutique</p>
      </div>
 
     <div id="liste-confiseries">
