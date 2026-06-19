@@ -21,10 +21,7 @@
             </ul>
 
             <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
-                <span>
-                    <?php echo $_SESSION["user"]["prenom"]; ?>
-                </span>
-                <a class="connexion" href="deconnexion.php">Se déconnecter</a>
+                <a class="connexion" href="deconnexion.php"><?php echo $_SESSION["user"]["username"]; ?></a>
             <?php else: ?>
                 <a class="connexion" href="connexion.php">Se connecter</a>
             <?php endif; ?>

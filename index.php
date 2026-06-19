@@ -2,11 +2,15 @@
 
 <main>
     <div class="hero">
-        <div class = "logo"><img src="./img/logo_confiz.png" alt="Logo Confiz"></div>
+        <div class="logo"><img src="./img/logo_confiz.png" alt="Logo Confiz"></div>
         <h1>Bienvenue sur le Site Confiz !</h1>
     </div>
 
-    <button class="connexion"><a href="connexion.php">Se connecter</a></button>
+    <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
+        <a class="connexion" href="boutiques.php">Visiter le site</a>
+    <?php else: ?>
+        <a class="connexion" href="connexion.php">Se connecter</a>
+    <?php endif; ?>
 
     <div class="qui-sommes-nous">
         <h2>Qui sommes-nous ?</h2>

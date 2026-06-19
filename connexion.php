@@ -28,6 +28,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         <input type="password" name="password" placeholder="Mot de passe" />
         <input type="submit" value="Se connecter" />
     </form>
+    <p>Vous n'avez pas de compte ? <a href="inscription.php">S'inscrire</a></p>
 </main>
 
 <?php include_once("footer.php") ?>

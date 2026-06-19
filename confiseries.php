@@ -14,7 +14,10 @@ include_once("bdd.php");
                 <div class="card-contenu">
                     <h3><?php echo $elem["nom"]; ?></h3>
                 </div>
-                <img src="./img/bonbons/<?php echo $elem["nom"]; ?>.jpg" alt="placeholder" class="card-img">
+                <img src="./img/bonbons/<?php echo $elem["id"]; ?>.jpg" alt="Image <?php echo $elem["nom"]; ?>" class="card-img">
+                <div class="card-contenu">
+                    <p><?php echo $elem["prix"]; ?>€</p>
+                </div>
             </div>
         <?php } ?>
     </div>
