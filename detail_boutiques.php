@@ -1,25 +1,24 @@
-<?php include_once("./header.php");
+<?php 
+include_once("./header.php");
 include_once("bdd.php");
+
+$id = $_GET["id"];
+$boutique = dbquery("SELECT * FROM boutiques WHERE id = ?"[$id]);
 ?>
 
 <main>
     <div class="hero">
-        <h1>Que recherchez vous ?</h1>
+        <h1><?php echo $boutique[0]["nom"]; ?></h1>
     </div>
 
     <div id="liste-confiseries">
-        <?php foreach ($boutiques as $elem) { ?>    
         <div class="card">
-
-                <div class="card-contenu">
-                    <a href="./confiseries.php"><h3><?php echo $elem["nom"]; ?></h3></a>
-                </div>
-                <img src="./img/placeholder.png" alt="placeholder" class="card-img">
+            <div class="card-contenu">
+                <h3><?php echo $boutique[0]["nom"]; ?></h3>
             </div>
-        <?php } ?>
+            <img src="./img/placeholder.png" alt="placeholder" class="card-img">
+        </div>
     </div>
 </main>
-
-<script src="./js/script.js"></script>
 
 <?php include_once("./footer.php") ?>

@@ -13,9 +13,8 @@ include_once("bdd.php");
     <div id="liste-confiseries">
         <?php foreach ($boutiques as $elem) { ?>    
         <div class="card">
-
                 <div class="card-contenu">
-                    <a href="./confiseries.php"><h3><?php echo $elem["nom"]; ?></h3></a>
+                    <a href="./detail_boutiques.php?id=<?php echo $elem["id"]; ?>"><h3><?php echo $elem["nom"]; ?></h3></a>
                 </div>
                 <img src="./img/placeholder.png" alt="placeholder" class="card-img">
             </div>

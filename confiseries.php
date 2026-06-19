@@ -12,7 +12,7 @@ include_once("bdd.php");
             <div class="card">
 
                 <div class="card-contenu">
-                    <h3><?php echo $elem["nom"]; ?></h3>
+                    <a href="./detail_bonbon.php?id=<?php echo $elem["id"]; ?>"><h3><?php echo $elem["nom"]; ?></h3></a>
                 </div>
                 <img class="card-img"src="<?php echo $elem['illustration']; ?>" alt="Image <?php echo $elem['illustration']; ?>">
                 <div class="card-contenu">
@@ -22,7 +22,5 @@ include_once("bdd.php");
         <?php } ?>
     </div>
 </main>
-
-<script src="./js/script.js"></script>
 
 <?php include_once("./footer.php") ?>
