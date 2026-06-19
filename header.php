@@ -1,4 +1,5 @@
-<?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
+<?php if (session_status() === PHP_SESSION_NONE)
+    session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,7 +22,17 @@
             </ul>
 
             <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
+
+                <?php if ($_SESSION["user"]["role"] === "admin"): ?>
+                    <a href="admin.php">Administration</a>
+                <?php endif; ?>
+
+                <?php if ($_SESSION["user"]["role"] === "gerant" || $_SESSION["user"]["role"] === "admin"): ?>
+                    <a href="gestion_stock.php">Gérer mes stocks</a>
+                <?php endif; ?>
+
                 <a class="connexion" href="deconnexion.php"><?php echo $_SESSION["user"]["username"]; ?></a>
+
             <?php else: ?>
                 <a class="connexion" href="connexion.php">Se connecter</a>
             <?php endif; ?>
