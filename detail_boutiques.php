@@ -3,7 +3,7 @@ include_once("./header.php");
 include_once("bdd.php");
 
 $id = $_GET["id"];
-$boutique = dbquery("SELECT * FROM boutiques WHERE id = ?"[$id]);
+$boutique = dbquery("SELECT * FROM boutiques WHERE id = ?", [$id]);
 ?>
 
 <main>
