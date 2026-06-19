@@ -5,8 +5,10 @@ include_once("bdd.php");
 <main>
     <div class="hero">
         <h1>Quelle boutique recherchez vous ?</h1>
-         <p>séléctionnez une boutique</p>
     </div>
+     <div class="hero">
+     <p>séléctionnez une boutique</p>
+     </div>
 
     <div id="liste-confiseries">
         <?php foreach ($boutiques as $elem) { ?>    
