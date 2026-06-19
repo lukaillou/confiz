@@ -15,9 +15,9 @@
         <nav class="navbar">
             <a class="logo" href="./index.php"><img src="./img/logo_confiz.png" alt="logo Confiz"></a>
             <ul class="nav-links">
-               <li><a href="./index.php" class="btn-transparent">Accueil</a></li>
-               <li><a href="./boutiques.php" class="btn-transparent">Boutiques</a></li>
-               <li><a href="./confiseries.php" class="btn-transparent">Confiseries</a></li>
+                <li><a href="./index.php ">Accueil</a></li>
+                <li><a href="./boutiques.php">Boutiques</a></li>
+                <li><a href="./confiseries.php">Confiseries</a></li>
             </ul>
 
             <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
