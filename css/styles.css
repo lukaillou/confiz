@@ -241,3 +241,29 @@ footer hr {
     margin: 0;
     padding-bottom: 0.5em;
 }
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+.btn-transparent {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff; /* Couleur du texte (à adapter selon votre fond) */
+    text-decoration: none; /* Supprime le soulignement */
+    background-color: transparent; /* Fond transparent */
+    border: 2px solid #ffffff; /* Bordure blanche (crée l'effet de bouton) */
+    border-radius: 5px; /* Arrondit les angles */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Animation fluide au survol */
+}
+
+/* Effet au survol (Hover) */
+.btn-transparent:hover {
+    background-color: #ffffff; /* Le fond devient blanc */
+    color: #000000; /* Le texte devient noir (ou la couleur de votre choix) */
+    cursor: pointer;
+}
