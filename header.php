@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confiz</title>
+    <link rel="stylesheet" href="./css/bulma.min.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -16,25 +17,22 @@
         <nav class="navbar">
             <a class="logo" href="./index.php"><img src="./img/logo_confiz.png" alt="logo Confiz"></a>
             <ul class="nav-links">
-                <li><a href="./index.php ">Accueil</a></li>
+                <li><a href="./index.php">Accueil</a></li>
                 <li><a href="./boutiques.php">Boutiques</a></li>
                 <li><a href="./confiseries.php">Confiseries</a></li>
             </ul>
-
-            <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
-
-                <?php if ($_SESSION["user"]["role"] === "admin"): ?>
-                    <a href="admin.php">Administration</a>
+            <div class="nav-user">
+                <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
+                    <?php if ($_SESSION["user"]["role"] === "admin"): ?>
+                        <a href="admin.php">Administration</a>
+                    <?php endif; ?>
+                    <?php if ($_SESSION["user"]["role"] === "gerant" || $_SESSION["user"]["role"] === "admin"): ?>
+                        <a href="gestion_stock.php">Gérer mes stocks</a>
+                    <?php endif; ?>
+                    <a class="connexion button is-rounded" href="deconnexion.php"><?php echo $_SESSION["user"]["username"]; ?></a>
+                <?php else: ?>
+                    <a class="connexion button is-rounded" href="connexion.php">Se connecter</a>
                 <?php endif; ?>
-
-                <?php if ($_SESSION["user"]["role"] === "gerant" || $_SESSION["user"]["role"] === "admin"): ?>
-                    <a href="gestion_stock.php">Gérer mes stocks</a>
-                <?php endif; ?>
-
-                <a class="connexion" href="deconnexion.php"><?php echo $_SESSION["user"]["username"]; ?></a>
-
-            <?php else: ?>
-                <a class="connexion" href="connexion.php">Se connecter</a>
-            <?php endif; ?>
+            </div>
         </nav>
     </header>

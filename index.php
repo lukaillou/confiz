@@ -1,23 +1,24 @@
 <?php include_once("./header.php") ?>
 
 <main>
-    <div class="hero">
+    <div class="home-hero">
         <div class="logo"><img src="./img/logo_confiz.png" alt="Logo Confiz"></div>
-        <h1>Bienvenue sur le Site Confiz !</h1>
+        <h1 class="title">Bienvenue sur le Site Confiz !</h1>
     </div>
 
-    <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
-        <a class="connexion" href="boutiques.php">Visiter le site</a>
-    <?php else: ?>
-        <a class="connexion" href="connexion.php">Se connecter</a>
-    <?php endif; ?>
-
-    <div class="qui-sommes-nous">
-        <h2>Qui sommes-nous ?</h2>
+    <div class="qui-sommes-nous is-flex is-align-items-center mt-5">
+        <h2 class="subtitle">Qui sommes-nous ?</h2>
         <p>Chez Confiz, nous croyons que commander des confiseries doit être aussi amusant que les déguster. Notre
             mission est de proposer une plateforme colorée, simple et conviviale permettant aux boutiques de
             retrouver facilement toutes leurs friandises préférées. 🍭✨</p>
     </div>
+
+    <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
+        <a class="connexion button is-rounded" href="boutiques.php">Visiter le site</a>
+    <?php else: ?>
+        <a class="connexion button is-rounded" href="connexion.php">Se connecter</a>
+    <?php endif; ?>
+
 </main>
 
 <script type="module" src="./js/script.js"></script>
