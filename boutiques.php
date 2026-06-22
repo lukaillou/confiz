@@ -10,6 +10,8 @@ include_once("bdd.php");
     <div class="container">
         <div class="columns is-multiline">
 
+
+
             <?php foreach ($boutiques as $elem) { ?>
                 <div class="column is-3">
                     <a href="./detail_boutiques.php?id=<?php echo $elem["id"]; ?>" class="card-boutique">
@@ -29,6 +31,27 @@ include_once("bdd.php");
 
         </div>
     </div>
+
+   <section class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-6">
+        <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
+            <?php if ($_SESSION["user"]["role"] === "client"):
+                if (count($boutiques_gerant) > 0) { ?>
+                    <h1 class="title has-text-centered">Modifier une boutique</h1>
+                    <?php foreach ($boutiques_gerant as $elem) { ?>
+                        <a href="./boutique_gerant.php?id=<?php echo $elem["id"]; ?>">
+                            <div class="button is-rounded connexion mt-6 p-6">
+                                <h1 class="title has-text-centered">
+                                    <?php echo $elem["nom"] ?>
+                                </h1>
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
+                </a>
+            <?php endif; ?>
+        <?php endif; ?>
+    </section>
+
+
 </main>
 
 <script src="./js/script.js"></script>

@@ -6,7 +6,7 @@
         <h1 class="title">Bienvenue sur le Site Confiz !</h1>
     </div>
 
-    <div class="qui-sommes-nous is-flex is-align-items-center mt-5">
+    <div class="qui-sommes-nous is-flex is-align-items-center my-5">
         <h2 class="subtitle">Qui sommes-nous ?</h2>
         <p>Chez Confiz, nous croyons que commander des confiseries doit être aussi amusant que les déguster. Notre
             mission est de proposer une plateforme colorée, simple et conviviale permettant aux boutiques de
