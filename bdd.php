@@ -8,9 +8,7 @@ $types = dbquery("SELECT DISTINCT type FROM confiseries");
 
 $utilisateurs = dbquery("SELECT * FROM utilisateurs");
 
-$boutiques_gerant = dbquery("SELECT * FROM boutiques WHERE utilisateur_id = 3");
-
-$boutiques_geran = dbquery("SELECT * FROM boutiques WHERE utilisateur_id = ?", [$_SESSION["user"]["id"]]);
+$boutiques_gerant = dbquery("SELECT * FROM boutiques WHERE utilisateur_id = ?", [$_SESSION["user"]["id"]]);
 
 foreach ($confiseries as $e) {
     dbquery("UPDATE confiseries 
