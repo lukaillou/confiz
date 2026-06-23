@@ -9,6 +9,7 @@
     <title>Confiz</title>
     <link rel="stylesheet" href="./css/bulma.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -25,10 +26,6 @@
                 <div class="navbar-start is-justify-content-space-around" style="flex: 1;">
                     <a class="navbar-item" href="./index.php">Accueil</a>
                     <a class="navbar-item" href="./boutiques.php">Boutiques</a>
-                    <a class="navbar-item" href="./confiseries.php">Confiseries</a>
-                </div>
-
-                <div class="navbar-end">
                     <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
                         <?php if ($_SESSION["user"]["role"] === "admin"): ?>
                             <a class="navbar-item" href="admin.php">Administration</a>
@@ -36,9 +33,15 @@
                         <?php if ($_SESSION["user"]["role"] === "gerant" || $_SESSION["user"]["role"] === "admin"): ?>
                             <a class="navbar-item" href="gestion_stock.php">Gérer mes stocks</a>
                         <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+
+                <div class="navbar-end">
+                    <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
                         <div class="navbar-item">
-                            <a class="button is-rounded connexion"
-                                href="deconnexion.php"><?php echo $_SESSION["user"]["username"]; ?>
+                            <a class="button is-rounded connexion" href="deconnexion.php">
+                                <i class="fa-solid fa-right-from-bracket mr-2"></i>
+                                <?php echo $_SESSION["user"]["username"]; ?>
                             </a>
                         </div>
                     <?php else: ?>

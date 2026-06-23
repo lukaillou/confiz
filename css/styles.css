@@ -97,7 +97,6 @@ main {
 /* CARDS */
 /* =================== */
 .card {
-    background: #2B928B;
     color: white;
     border-radius: 15px;
     overflow: hidden;
@@ -105,12 +104,6 @@ main {
     width: 250px;
     display: flex;
     flex-direction: column;
-}
-
-.card:hover {
-    background: #124541;
-    transform: scale(1.05);
-    transition: 500ms;
 }
 
 .card-img {

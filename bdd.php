@@ -8,7 +8,17 @@ $types = dbquery("SELECT DISTINCT type FROM confiseries");
 
 $utilisateurs = dbquery("SELECT * FROM utilisateurs");
 
-$boutiques_gerant = dbquery("SELECT * FROM boutiques WHERE utilisateur_id = ?", [$_SESSION["user"]["id"]]);
+if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+    $boutiques_gerant = dbquery("SELECT * FROM boutiques WHERE utilisateur_id = ?", [$_SESSION["user"]["id"]]);
+}
+;
+
+$stock = dbquery("SELECT confiserie_id, SUM(quantite) as total FROM stocks GROUP BY confiserie_id");
+
+$stocks = [];
+foreach ($stock as $s) {
+    $stocks[$s["confiserie_id"]] = $s["total"];
+}
 
 foreach ($confiseries as $e) {
     dbquery("UPDATE confiseries 

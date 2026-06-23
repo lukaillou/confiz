@@ -27,9 +27,9 @@ $b = $boutique[0];
     <div class="columns px-4">
         <div class="column is-4 px-3">
             <figure class="image is-4by3">
-                <img src="./img/placeholder.png" alt="Carte">
+                <img src="./img/cartes/<?php echo $b["ville"]; ?>.jpg" alt="Carte de  <?php echo $b["ville"]; ?>">
             </figure>
-            <p class="has-text-black mt-2">Carte localisation</p>
+            <p class="has-text-black mt-2">Localisation | <?php echo $b["ville"]; ?></p>
         </div>
 
         <div class="column is-4 px-3">
@@ -44,7 +44,8 @@ $b = $boutique[0];
                 <p>Bienvenue chez <?php echo $b["nom"]; ?>, une boutique gourmande où les couleurs, les saveurs et la
                     nostalgie se mélangent comme dans une pluie de bonbons 🍬</p>
                 <p class="mt-3">Entre douceurs rétro, confiseries originales et univers chaleureux,
-                    <?php echo $b["nom"]; ?> transforme chaque visite en petite parenthèse sucrée.</p>
+                    <?php echo $b["nom"]; ?> transforme chaque visite en petite parenthèse sucrée.
+                </p>
                 <a href="./confiseries.php?boutique_id=<?php echo $b["id"]; ?>"
                     class="button is-rounded mt-5 voir-produit">Voir produit</a>
             </div>

@@ -12,13 +12,7 @@
             mission est de proposer une plateforme colorée, simple et conviviale permettant aux boutiques de
             retrouver facilement toutes leurs friandises préférées. 🍭✨</p>
     </div>
-
-    <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]): ?>
-        <a class="connexion button is-rounded" href="boutiques.php">Visiter le site</a>
-    <?php else: ?>
-        <a class="connexion button is-rounded" href="connexion.php">Se connecter</a>
-    <?php endif; ?>
-
+    <a class="connexion button is-rounded" href="boutiques.php">Visiter le site</a>
 </main>
 
 <script type="module" src="./js/script.js"></script>

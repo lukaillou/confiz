@@ -39,7 +39,18 @@ include_once("bdd.php");
                             <footer class="card-footer is-align-items-center px-4 py-3">
                                 <a class="button is-rounded is-small connexion"
                                     href="./detail_bonbon.php?id=<?php echo $elem['id']; ?>">Acheter</a>
-                                <span class="ml-auto has-text-weight-bold"><?php echo $elem['prix']; ?>€</span>
+                                <span
+                                    class="ml-auto has-text-weight-bold has-text-black"><?php echo $elem['prix']; ?>€</span>
+                                <span class="ml-3 is-size-7 has-text-grey">
+                                    
+                                    <?php if (isset($stocks[$elem["id"]])) {
+                                        echo $stocks[$elem["id"]] . " dispo";
+                                    } else {
+                                        echo "Rupture";
+                                    }
+                                    ; ?>
+                                    
+                                </span>
                             </footer>
                         </div>
                     </div>

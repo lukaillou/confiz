@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once("./header.php");
 include_once("bdd.php");
 
@@ -9,18 +9,20 @@ if (!isset($_GET["id"])) {
 
 $id = $_GET["id"];
 $confiserie = dbquery("SELECT * FROM confiseries WHERE id = ?", [$id]);
-$c = $confiserie[0];
-
-$stock = dbquery("SELECT SUM(quantite) as total FROM stocks WHERE confiserie_id = ?", [$id]);
-$total_stock = $stock[0]["total"] ?? 0;
-?>
-
+$c = $confiserie[0]; ?>
 
 <section class="detail-hero">
     <div class="columns is-vcentered px-5 py-4">
         <div class="column">
             <h1 class="title has-text-white is-2"><?php echo $c["nom"]; ?></h1>
-            <p class="subtitle has-text-white is-4"><?php echo $total_stock; ?> disponibles</p>
+            <p class="subtitle has-text-white is-4">
+                <?php if (isset($stocks[$c["id"]])) {
+                    echo $stocks[$c["id"]] . " dispo";
+                } else {
+                    echo "Rupture";
+                }
+                ; ?>
+            </p>
         </div>
         <div class="column has-text-right">
             <h2 class="title has-text-white"><?php echo "Confiz"; ?></h2>
