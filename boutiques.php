@@ -1,5 +1,8 @@
-<?php include_once("./header.php");
+<?php
+include_once("./header.php");
 include_once("bdd.php");
+
+// Note : Assure-toi que $boutiques_gerant est bien défini dans bdd.php !
 ?>
 
 <main>
@@ -26,15 +29,15 @@ include_once("bdd.php");
                     </a>
                 </div>
             <?php } ?>
-
         </div>
     </div>
 
     <section class="container mt-6">
         <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) { ?>
 
-            <?php if ($_SESSION["user"]["role"] === "gerant") { ?>
-                <?php if (count($boutiques_gerant) > 0) { ?>
+            <?php if ($_SESSION["user"]["role"] === "gerant" || $_SESSION["user"]["role"] === "admin") { ?>
+                <?php if (isset($boutiques_gerant) && count($boutiques_gerant) > 0) { ?>
+
                     <h1 class="title has-text-centered">Modifier une boutique</h1>
                     <div class="columns is-multiline">
                         <?php foreach ($boutiques_gerant as $elem) { ?>
@@ -56,6 +59,7 @@ include_once("bdd.php");
                             </div>
                         <?php } ?>
                     </div>
+
                 <?php } ?>
             <?php } ?>
 
@@ -70,8 +74,6 @@ include_once("bdd.php");
 
         <?php } ?>
     </section>
-
-
 </main>
 
 <script src="./js/script.js"></script>
