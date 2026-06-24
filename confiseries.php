@@ -18,6 +18,24 @@ include_once("bdd.php");
                             </label>
                         </div>
                     <?php } ?>
+
+
+                    <label class="label">Stock</label>
+
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox" value="Rupture">
+                            Rupture
+                        </label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox" value="Dipsonible">
+                            Disponible
+                        </label>
+                    </div>
+
+
                 </div>
             </aside>
         </div>
@@ -42,14 +60,14 @@ include_once("bdd.php");
                                 <span
                                     class="ml-auto has-text-weight-bold has-text-black"><?php echo $elem['prix']; ?>€</span>
                                 <span class="ml-3 is-size-7 has-text-grey">
-                                    
+
                                     <?php if (isset($stocks[$elem["id"]])) {
                                         echo $stocks[$elem["id"]] . " dispo";
                                     } else {
                                         echo "Rupture";
                                     }
                                     ; ?>
-                                    
+
                                 </span>
                             </footer>
                         </div>

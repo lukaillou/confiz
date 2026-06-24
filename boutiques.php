@@ -18,7 +18,8 @@ include_once("bdd.php");
                             </div>
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="./img/cartes/<?php echo $elem["ville"]; ?>.jpg" alt="<?php echo $elem["nom"]; ?>">
+                                    <img src="./img/cartes/<?php echo $elem["ville"]; ?>.jpg"
+                                        alt="<?php echo $elem["nom"]; ?>">
                                 </figure>
                             </div>
                         </div>
@@ -31,6 +32,7 @@ include_once("bdd.php");
 
     <section class="container mt-6">
         <?php if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) { ?>
+
             <?php if ($_SESSION["user"]["role"] === "gerant") { ?>
                 <?php if (count($boutiques_gerant) > 0) { ?>
                     <h1 class="title has-text-centered">Modifier une boutique</h1>
@@ -56,6 +58,16 @@ include_once("bdd.php");
                     </div>
                 <?php } ?>
             <?php } ?>
+
+            <?php if ($_SESSION["user"]["role"] === "admin") { ?>
+                <h1 class="title has-text-centered mt-6">Administration</h1>
+                <div class="has-text-centered">
+                    <a href="./ajouter_boutique.php" class="button is-rounded connexion">
+                        + Ajouter une boutique
+                    </a>
+                </div>
+            <?php } ?>
+
         <?php } ?>
     </section>
 
