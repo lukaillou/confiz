@@ -7,13 +7,13 @@ include_once("bdd.php");
         <h1 class="title has-text-centered">Sélectionner une boutique</h1>
     </section>
 
-    <div class="container">
+    <div class="container is-centered">
         <div class="columns is-multiline">
             <?php foreach ($boutiques as $elem) { ?>
                 <div class="column is-3 is-centered">
                     <a href="./detail_boutiques.php?id=<?php echo $elem["id"]; ?>" class="card-boutique">
                         <div class="card">
-                            <div class="card-header" style="background-color: #03302aff;">
+                            <div class="card-header" style="background-color: #04a28dff;">
                                 <p class="card-header-title has-text-white"><?php echo $elem["nom"]; ?></p>
                             </div>
                             <div class="card-image">
