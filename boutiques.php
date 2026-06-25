@@ -10,10 +10,10 @@ include_once("bdd.php");
     <div class="container">
         <div class="columns is-multiline">
             <?php foreach ($boutiques as $elem) { ?>
-                <div class="column is-3">
+                <div class="column is-3 is-centered">
                     <a href="./detail_boutiques.php?id=<?php echo $elem["id"]; ?>" class="card-boutique">
                         <div class="card">
-                            <div class="card-header" style="background-color: #007263ff;">
+                            <div class="card-header" style="background-color: #03302aff;">
                                 <p class="card-header-title has-text-white"><?php echo $elem["nom"]; ?></p>
                             </div>
                             <div class="card-image">
