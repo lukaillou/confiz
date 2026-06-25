@@ -330,3 +330,14 @@ footer hr {
     margin: 0;
     padding-bottom: 0.5em;
 }
+
+@font-face {
+    font-family: 'Merry Bright'; 
+    src: url('./fonts/Merry Bright.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+.title {
+    font-family: 'Merry Bright', sans-serif !important;
+}
