@@ -12,7 +12,7 @@ $boutique = dbquery("SELECT * FROM boutiques WHERE id = ?", [$id]);
 $b = $boutique[0];
 ?>
 <main style="background-image: url('./img/bluepaint.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; padding-bottom: 2rem;">
-<section class="boutique-hero">
+
 <section class="boutique-hero">
     <div class="columns px-5 py-4 is-vcentered">
         <div class="column has-text-centered">
