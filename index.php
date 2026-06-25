@@ -7,7 +7,7 @@
     </div>
 
     <div class="qui-sommes-nous is-flex is-align-items-center my-5">
-    <img src="./img/gentilloraxarbre.png" alt="Illustration Qui sommes-nous" style="max-width: 150px; height: auto;">
+    <img src="./img/lorax.png" alt="Illustration Qui sommes-nous" style="max-width: 150px; height: auto;">
         <h2 class="subtitle">Qui sommes-nous ?</h2>
         <p>Chez Confiz, nous croyons que commander des confiseries doit être aussi amusant que les déguster. Notre
             mission est de proposer une plateforme colorée, simple et conviviale permettant aux boutiques de
