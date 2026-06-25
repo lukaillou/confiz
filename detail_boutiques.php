@@ -1,15 +1,18 @@
 <?php
+// Charge l'en-tête (menu) et la base de données
 include_once("./header.php");
 include_once("bdd.php");
 
+// SÉCURITÉ : Si aucun ID de boutique n'est donné dans l'URL, on renvoie vers la page des boutiques
 if (!isset($_GET["id"])) {
     header("Location: boutiques.php");
     exit();
 }
 
+// Récupère l'ID dans l'URL et charge toutes les infos de CETTE boutique précise
 $id = $_GET["id"];
 $boutique = dbquery("SELECT * FROM boutiques WHERE id = ?", [$id]);
-$b = $boutique[0];
+$b = $boutique[0]; // Stocke la boutique dans la variable $b
 ?>
 <main style="background-image: url('./img/bluepaint.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; padding-bottom: 2rem;">
 
@@ -26,6 +29,7 @@ $b = $boutique[0];
 
 <section class="boutique-contenu">
     <div class="columns px-4">
+        
         <div class="column is-4 px-3">
             <figure class="image is-4by3">
                 <img src="./img/cartes/<?php echo $b["ville"]; ?>.jpg" alt="Carte de  <?php echo $b["ville"]; ?>">
@@ -37,65 +41,4 @@ $b = $boutique[0];
             <figure class="image is-4by3">
                 <img src="./img/placeholder.png" alt="Photo boutique">
             </figure>
-            <p class="has-text-black mt-2">Photo boutique</p>
-        </div>
-
-        <div class="column is-4 px-3">
-            <div class="box boutique-desc">
-                <p>Bienvenue chez <?php echo $b["nom"]; ?>, une boutique gourmande où les couleurs, les saveurs et la
-                    nostalgie se mélangent comme dans une pluie de bonbons 🍬</p>
-                <p class="mt-3">Entre douceurs rétro, confiseries originales et univers chaleureux,
-                    <?php echo $b["nom"]; ?> transforme chaque visite en petite parenthèse sucrée.
-                </p>
-                <a href="./confiseries.php?boutique_id=<?php echo $b["id"]; ?>"
-                    class="button is-rounded mt-5 voir-produit">Voir produit</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="horaires-section">
-    <div class="container py-5">
-        <h2 class="title has-text-centered mb-5">🕐 Horaires d'ouverture</h2>
-        <div class="columns is-centered">
-            <div class="column is-6">
-                <table class="table is-fullwidth is-striped is-hoverable horaires-table">
-                    <tbody>
-                        <tr>
-                            <td><strong>Lundi</strong></td>
-                            <td class="has-text-right">10h00 - 19h00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Mardi</strong></td>
-                            <td class="has-text-right">10h00 - 19h00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Mercredi</strong></td>
-                            <td class="has-text-right">10h00 - 19h00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Jeudi</strong></td>
-                            <td class="has-text-right">10h00 - 19h00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Vendredi</strong></td>
-                            <td class="has-text-right">10h00 - 20h00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Samedi</strong></td>
-                            <td class="has-text-right">09h00 - 20h00</td>
-                        </tr>
-                        <tr class="has-background-danger-light">
-                            <td><strong>Dimanche</strong></td>
-                            <td class="has-text-right has-text-danger">Fermé</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</section>
-
-<a class="button is-rounded" href="boutiques.php">← Retour</a>
-
-<?php include_once("./footer.php") ?>
+            <p class="has-
