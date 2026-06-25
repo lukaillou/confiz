@@ -13,7 +13,7 @@ include_once("bdd.php");
                 <div class="column is-3">
                     <a href="./detail_boutiques.php?id=<?php echo $elem["id"]; ?>" class="card-boutique">
                         <div class="card">
-                            <div class="card-header" style="background-color: #03302aff;">
+                            <div class="card-header" style="background-color: #007263ff;">
                                 <p class="card-header-title has-text-white"><?php echo $elem["nom"]; ?></p>
                             </div>
                             <div class="card-image">
