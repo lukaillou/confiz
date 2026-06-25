@@ -4,7 +4,9 @@ include_once("bdd.php");
 
 <main>
     <section class="section">
-        <h1 class="title has-text-centered">Sélectionner une boutique</h1>
+        <img src="./img/loraxmainlair.png" alt="" style="vertical-align: middle; height: 40px; margin-right: 12px;">
+            Sélectionner une boutique
+        </h1>
     </section>
 
     <div class="container">
