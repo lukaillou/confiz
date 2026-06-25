@@ -9,7 +9,7 @@ if (!isset($_GET["id"])) {
     exit();
 }
 
-// Récupère l'ID depuis l'URL et va chercher les infos de CE bonbon précis
+// . Récupère l'ID depuis l'URL et va chercher les infos de CE bonbon précis
 $id = $_GET["id"];
 $confiserie = dbquery("SELECT * FROM confiseries WHERE id = ?", [$id]);
 $c = $confiserie[0]; // Stocke le bonbon trouvé dans la variable $c

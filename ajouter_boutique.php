@@ -2,7 +2,7 @@
 include_once("./header.php");
 include_once("bdd.php");
 
-// Vérifier que c'est un admin  ou connecté  et redirige accueil
+// Vérifier que c'est un admin
 if (!isset($_SESSION["logged_in"]) || $_SESSION["user"]["role"] !== "admin") {
     header("Location: index.php");
     exit();
@@ -10,9 +10,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["user"]["role"] !== "admin") {
 
 // Traitement du formulaire
 if (isset($_POST["ajouter"])) {
-    // Préparation de la requête SQL 
     $stmt = $PDO->prepare("INSERT INTO boutiques (nom, utilisateur_id, numero_rue, nom_adresse, code_postal, ville, pays) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    // Exécute avec les données envoyées par le formulaire
     $stmt->execute([
         $_POST["nom"],
         $_POST["utilisateur_id"],
@@ -22,11 +20,11 @@ if (isset($_POST["ajouter"])) {
         $_POST["ville"],
         $_POST["pays"]
     ]);
-    // Redige vers liste boutiques après l'ajout
     header("Location: boutiques.php");
     exit();
 }
 ?>
+
 <main>
     <section class="section">
         <h1 class="title has-text-centered">Ajouter une boutique</h1>

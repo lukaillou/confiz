@@ -1,22 +1,18 @@
-<?php 
-// Charge le haut du site (menu) et la base de données
-include_once("./header.php");
+<?php include_once("./header.php");
 include_once("bdd.php");
 ?>
 
 <main>
 <main style="background-image: url('./img/herbe.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; padding-bottom: 2rem;">
+
     <div class="columns is-fullwidth" style="width:100%;">
 
         <div class="column is-3">
             <aside class="box filtres">
                 <h2 class="title is-5">Filtres Boutique</h2>
                 <div class="field mt-3">
-                    
                     <label class="label">Type</label>
-                    <?php 
-                    // Boucle pour créer une case à cocher par catégorie de bonbon
-                    foreach ($types as $type) { ?>
+                    <?php foreach ($types as $type) { ?>
                         <div class="control">
                             <label class="checkbox">
                                 <input type="checkbox" value="<?php echo $type["type"]; ?>">
@@ -25,8 +21,9 @@ include_once("bdd.php");
                         </div>
                     <?php } ?>
 
-                    <?php // Cases à cocher fixes pour filtrer par l'état du stock ?>
+
                     <label class="label">Stock</label>
+
                     <div class="control">
                         <label class="checkbox">
                             <input type="checkbox" value="Rupture">
@@ -40,32 +37,25 @@ include_once("bdd.php");
                         </label>
                     </div>
 
+
                 </div>
             </aside>
         </div>
 
         <div class="column">
             <div class="columns is-multiline">
-                <?php 
-                // Boucle qui parcourt et affiche chaque bonbon sous forme de carte
-                foreach ($confiseries as $elem) { ?>
+                <?php foreach ($confiseries as $elem) { ?>
                     <div class="column is-3">
                         <div class="card confiserie-card">
-                            
-                            <?php // Affiche la photo du bonbon ?>
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img src="<?php echo $elem['illustration']; ?>" alt="Image <?php echo $elem['nom']; ?>">
                                 </figure>
                             </div>
-                            
-                            <?php // Affiche le nom, le type et la description du bonbon ?>
                             <div class="card-content">
                                 <p class="title is-6"><?php echo $elem['nom']; ?> - <?php echo $elem['type']; ?></p>
                                 <p class="subtitle is-7 has-text-black"><?php echo $elem['description']; ?></p>
                             </div>
-                            
-                            <?php // Bas de la carte : Bouton d'achat, prix et état du stock ?>
                             <footer class="card-footer is-align-items-center px-4 py-3">
                                 <a class="button is-rounded is-small connexion"
                                     href="./detail_bonbon.php?id=<?php echo $elem['id']; ?>">Acheter</a>
@@ -73,9 +63,7 @@ include_once("bdd.php");
                                     class="ml-auto has-text-weight-bold has-text-black"><?php echo $elem['prix']; ?>€</span>
                                 <span class="ml-3 is-size-7 has-text-grey">
 
-                                    <?php 
-                                    // Si le bonbon a du stock dispo, on affiche la quantité, sinon on écrit "Rupture"
-                                    if (isset($stocks[$elem["id"]])) {
+                                    <?php if (isset($stocks[$elem["id"]])) {
                                         echo $stocks[$elem["id"]] . " dispo";
                                     } else {
                                         echo "Rupture";
@@ -93,6 +81,4 @@ include_once("bdd.php");
     </div>
 </main>
 
-<?php 
-// Charge le bas de la page (footer)
-include_once("./footer.php") ?>
+<?php include_once("./footer.php") ?>
