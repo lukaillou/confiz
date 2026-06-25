@@ -12,11 +12,10 @@ include_once("bdd.php");
             <?php foreach ($boutiques as $elem) { ?>
                 <div class="column is-3">
                     <a href="./detail_boutiques.php?id=<?php echo $elem["id"]; ?>" class="card-boutique">
-
-                       <div class="card" style="background-image: url('./img/bluepaint.jpeg'); background-size: cover; background-position: center;">
-    <div class="card-header" style="background-color: #00b89c;">
-        <p class="card-header-title has-text-white"><?php echo $elem["nom"]; ?></p>
-    </div>
+                        <div class="card">
+                            <div class="card-header" style="background-color: #00b89c;">
+                                <p class="card-header-title has-text-white"><?php echo $elem["nom"]; ?></p>
+                            </div>
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img src="./img/cartes/<?php echo $elem["ville"]; ?>.jpg"
