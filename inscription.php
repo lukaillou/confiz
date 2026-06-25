@@ -1,22 +1,16 @@
 <?php
-//  Démarre la session utilisateur et inclut la BDD
 session_start();
 include_once("db.php");
 
-// Vérifie si le formulaire d'inscription a été soumis
 if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"])) {
     
-    // Vérifie si le pseudo demandé existe déjà en base de données
     $existant = dbquery("SELECT * FROM utilisateurs WHERE username = ?", [$_POST["username"]]);
     
     if ($existant) {
-        //  Si le pseudo est pris, on prépare un message d'erreur
         $erreur = "Ce nom d'utilisateur est déjà pris.";
     } else {
-        // Si tout est bon, on crypte/hache le mot de passe pour la sécurité
         $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
         
-        // On insère le nouvel utilisateur dans la table (avec le rôle 'client' par défaut)
         $stmt = $PDO->prepare("INSERT INTO utilisateurs (username, password, email, role, nom, prenom, ddn) VALUES (?, ?, ?, 'client', ?, ?, ?)");
         $stmt->execute([
             $_POST["username"],
@@ -27,20 +21,38 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["emai
             $_POST["ddn"]
         ]);
         
-        //  Inscription réussie : redirection vers la page de connexion
         header("Location: connexion.php");
         exit();
     }
 }
 ?>
 
-<?php 
-//  Charge l'en-tête du site (menu et styles)
-include_once("header.php") ?>
+<?php include_once("header.php") ?>
 
 <main>
-    <?php 
-    //  Si le pseudo était déjà pris, on affiche le message d'erreur en rouge
-    if (isset($erreur)) echo "<p style='color:red'>$erreur</p>"; ?>
+    <?php if (isset($erreur)) echo "<p style='color:red'>$erreur</p>"; ?>
 
-    <form action="inscription.php"
+    <form action="inscription.php" method="POST">
+        <label for="prenom">Prénom</label>
+        <input type="text" name="prenom" id="prenom" required />
+
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" required />
+
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" name="username" id="username" required />
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="ddn">Date de naissance</label>
+        <input type="date" name="ddn" id="ddn" required />
+
+        <label for="password">Mot de passe (8 caractères minimum)</label>
+        <input type="password" name="password" id="password" minlength="8" required />
+
+        <input type="submit" value="S'inscrire" />
+    </form>
+</main>
+
+<?php include_once("footer.php") ?>
