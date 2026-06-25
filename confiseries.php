@@ -3,6 +3,8 @@ include_once("bdd.php");
 ?>
 
 <main>
+<main style="background-image: url('./img/herbe.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; padding-bottom: 2rem;">
+<section class="boutique-hero">
     <div class="columns is-fullwidth" style="width:100%;">
 
         <div class="column is-3">
