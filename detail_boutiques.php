@@ -14,6 +14,7 @@ $b = $boutique[0];
 
 <main
     style="background-image: url('./img/bluepaint.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; padding-bottom: 2rem;">
+
     <a class="button is-rounded btn-retour" href="./boutiques.php">
         ← Retour
     </a>
