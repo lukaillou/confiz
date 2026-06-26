@@ -29,6 +29,10 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["emai
 
 <?php include_once("header.php") ?>
 
+<a class="button is-rounded btn-retour" href="./connexion.php">
+        ← Retour
+    </a>
+
 <main>
     <?php if (isset($erreur)) echo "<p style='color:red'>$erreur</p>"; ?>
 

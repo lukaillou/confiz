@@ -7,12 +7,15 @@
     </div>
 
     <div class="qui-sommes-nous is-flex is-align-items-center my-5">
-    <img src="./img/loraxcontent.jpg" alt="Illustration Qui sommes-nous" style="max-width : 80x; height: auto;">
-        <h2 class="subtitle">Qui sommes-nous ?</h2>
-        <p>Chez Confiz, nous croyons que commander des confiseries doit être aussi amusant que les déguster. Notre
-            mission est de proposer une plateforme colorée, simple et conviviale permettant aux boutiques de
-            retrouver facilement toutes leurs friandises préférées. 🍭✨</p>
+        <img src="./img/loraxmainlair.jpg" alt="Illustration Qui sommes-nous">
+        <div>
+            <h2 class="subtitle">Qui sommes-nous ?</h2>
+            <p>Chez Confiz, nous croyons que commander des confiseries doit être aussi amusant que les déguster. Notre
+                mission est de proposer une plateforme colorée, simple et conviviale permettant aux boutiques de
+                retrouver facilement toutes leurs friandises préférées. 🍭✨</p>
+        </div>
     </div>
+
     <a class="connexion button is-rounded" href="boutiques.php">Visiter le site</a>
 </main>
 

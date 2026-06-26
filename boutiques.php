@@ -3,6 +3,9 @@ include_once("bdd.php");
 ?>
 
 <main>
+    <a class="button is-rounded btn-retour" href="./index.php">
+        ← Retour
+    </a>
     <section class="section">
         <h1 class="title has-text-centered">Sélectionner une boutique</h1>
     </section>

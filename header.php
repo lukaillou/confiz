@@ -31,7 +31,7 @@
                             <a class="navbar-item" href="admin.php">Administration</a>
                         <?php endif; ?>
                         <?php if ($_SESSION["user"]["role"] === "gerant" || $_SESSION["user"]["role"] === "admin"): ?>
-                            <a class="navbar-item" href="gestion_stock.php">Gérer mes stocks</a>
+                            <a class="navbar-item" href="stock.php">Gérer mes stocks</a>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>

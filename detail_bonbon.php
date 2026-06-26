@@ -1,28 +1,26 @@
 <?php
-// Charge l'en-tête (menu) et la base de données
 include_once("./header.php");
 include_once("bdd.php");
 
-//  Si aucun ID de bonbon n'est fourni dans l'URL, on renvoie vers la liste complète
 if (!isset($_GET["id"])) {
     header("Location: confiseries.php");
     exit();
 }
 
-// . Récupère l'ID depuis l'URL et va chercher les infos de CE bonbon précis
 $id = $_GET["id"];
 $confiserie = dbquery("SELECT * FROM confiseries WHERE id = ?", [$id]);
-$c = $confiserie[0]; // Stocke le bonbon trouvé dans la variable $c
-?>
+$c = $confiserie[0]; ?>
+
+<a class="button is-rounded btn-retour" href="./detail_bonbon.php">
+        ← Retour
+    </a>
 
 <section class="detail-hero">
     <div class="columns is-vcentered px-5 py-4">
         <div class="column">
             <h1 class="title has-text-white is-2"><?php echo $c["nom"]; ?></h1>
             <p class="subtitle has-text-white is-4">
-                <?php 
-                // Affiche la quantité totale disponible ou "Rupture" si le stock est vide
-                if (isset($stocks[$c["id"]])) {
+                <?php if (isset($stocks[$c["id"]])) {
                     echo $stocks[$c["id"]] . " dispo";
                 } else {
                     echo "Rupture";
@@ -49,3 +47,16 @@ $c = $confiserie[0]; // Stocke le bonbon trouvé dans la variable $c
             <div class="box detail-desc">
                 <h2 class="title is-4">Détails produit</h2>
                 <p class="has-text-weight-bold mb-3"><?php echo $c["nom"]; ?></p>
+                <p><?php echo $c["description"]; ?></p>
+                <div class="mt-4 is-flex is-justify-content-space-between is-align-items-center">
+                    <p class="title is-5 has-text-weight-bold"><?php echo $c["prix"]; ?>€</p>
+                    <a class="button is-rounded connexion">Acheter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a class="button is-rounded" href="confiseries.php">← Retour</a>
+
+<?php include_once("./footer.php") ?>
