@@ -3,14 +3,14 @@ session_start();
 include_once("db.php");
 
 if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"])) {
-    
+
     $existant = dbquery("SELECT * FROM utilisateurs WHERE username = ?", [$_POST["username"]]);
-    
+
     if ($existant) {
         $erreur = "Ce nom d'utilisateur est déjà pris.";
     } else {
         $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-        
+
         $stmt = $PDO->prepare("INSERT INTO utilisateurs (username, password, email, role, nom, prenom, ddn) VALUES (?, ?, ?, 'client', ?, ?, ?)");
         $stmt->execute([
             $_POST["username"],
@@ -20,7 +20,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["emai
             $_POST["prenom"],
             $_POST["ddn"]
         ]);
-        
+
         header("Location: connexion.php");
         exit();
     }
@@ -30,11 +30,12 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["emai
 <?php include_once("header.php") ?>
 
 <a class="button is-rounded btn-retour" href="./connexion.php">
-        ← Retour
-    </a>
+    ← Retour
+</a>
 
 <main>
-    <?php if (isset($erreur)) echo "<p style='color:red'>$erreur</p>"; ?>
+    <?php if (isset($erreur))
+        echo "<p style='color:red'>$erreur</p>"; ?>
 
     <form action="inscription.php" method="POST">
         <label for="prenom">Prénom</label>

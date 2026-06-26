@@ -3,7 +3,7 @@ include_once("./header.php");
 include_once("bdd.php");
 
 // Vérifier que c'est un admin
-if (!isset($_SESSION["logged_in"]) || $_SESSION["user"]["role"] !== "admin") {
+if (isset($_SESSION["logged_in"]) && $_SESSION["user"]["role"] === "admin") {
     header("Location: index.php");
     exit();
 }

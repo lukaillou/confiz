@@ -110,7 +110,8 @@ main {
     height: 300px;
     object-fit: cover;
     border-radius: 12px;
-    flex-shrink: 0; /* empêche l'image de rétrécir */
+    flex-shrink: 0;
+    /* empêche l'image de rétrécir */
 }
 
 .qui-sommes-nous h2 {
@@ -128,6 +129,10 @@ main {
     width: 250px;
     display: flex;
     flex-direction: column;
+}
+
+.card-header {
+    background-color: #00b89c;  
 }
 
 .card-img {

@@ -10,9 +10,10 @@ if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] !== "gerant") {
 
 $user_id = $_SESSION["user"]["id"];
 
-$boutiques = dbquery("SELECT * FROM boutiques WHERE utilisateur_id = ?", [$user_id]);
-if (empty($boutiques)) die("Aucune boutique associée à votre compte.");
-$boutique = $boutiques[0];
+if (empty($boutiques)) {
+    header("Location: erreur.php?msg=Aucune boutique associée à votre compte.");
+    exit();
+};
 
 $stocks = dbquery("
     SELECT s.id AS stock_id, c.nom, c.type, c.prix, s.quantite, s.date_de_modification
