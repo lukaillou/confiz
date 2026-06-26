@@ -21,7 +21,7 @@ include_once("bdd.php");
                             </div>
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="./img/cartes/<?php echo $elem["ville"]; ?>.jpg"
+                                    <img src="./img/boutiques/<?php echo $elem["id"]; ?>.png"
                                         alt="<?php echo $elem["nom"]; ?>">
                                 </figure>
                             </div>
@@ -51,7 +51,7 @@ include_once("bdd.php");
                                         </div>
                                         <div class="card-image">
                                             <figure class="image is-4by3">
-                                                <img src="./img/placeholder.png" alt="<?php echo $elem["nom"]; ?>">
+                                                <img src="./img/boutiques/<?php echo $elem["id"]; ?>.png" alt="<?php echo $elem["nom"]; ?>">
                                             </figure>
                                         </div>
                                     </div>

@@ -40,7 +40,7 @@ $b = $boutique[0];
 
             <div class="column is-4 px-3">
                 <figure class="image is-4by3">
-                    <img src="./img/placeholder.png" alt="Photo boutique">
+                    <img src="./img/boutiques/<?php echo $b["id"]; ?>.png" alt="Photo boutique <?php echo $b["nom"]; ?>">
                 </figure>
                 <p class="has-text-white mt-2">Photo boutique</p>
             </div>
