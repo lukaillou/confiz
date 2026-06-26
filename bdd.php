@@ -3,7 +3,7 @@ include_once("db.php");
 // Récupération de la liste complète
 $boutiques = dbquery("SELECT * FROM boutiques");
 $confiseries = dbquery("SELECT * FROM confiseries");
-// doublons même catégories 
+// doublons même catégorie
 $types = dbquery("SELECT DISTINCT type FROM confiseries");
 
 $utilisateurs = dbquery("SELECT * FROM utilisateurs");
