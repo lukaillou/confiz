@@ -1,12 +1,13 @@
 <?php
 include_once("db.php");
-// Récupération de la liste complète
+
 $boutiques = dbquery("SELECT * FROM boutiques");
 $confiseries = dbquery("SELECT * FROM confiseries");
-// doublons même catégorie
+// doublons
 $types = dbquery("SELECT DISTINCT type FROM confiseries");
 
 $utilisateurs = dbquery("SELECT * FROM utilisateurs");
+
 // Si connecté, récupération spécifique des boutiques utilisateur 
 if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
     $boutiques_gerant = dbquery("SELECT * FROM boutiques WHERE utilisateur_id = ?", [$_SESSION["user"]["id"]]);
