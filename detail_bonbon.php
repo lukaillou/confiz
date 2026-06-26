@@ -12,8 +12,8 @@ $confiserie = dbquery("SELECT * FROM confiseries WHERE id = ?", [$id]);
 $c = $confiserie[0]; ?>
 
 <a class="button is-rounded btn-retour" href="./detail_bonbon.php">
-        ← Retour
-    </a>
+    ← Retour
+</a>
 
 <section class="detail-hero">
     <div class="columns is-vcentered px-5 py-4">
@@ -29,7 +29,7 @@ $c = $confiserie[0]; ?>
             </p>
         </div>
         <div class="column has-text-right">
-            <h2 class="title has-text-white"><?php echo "Confiz"; ?></h2>
+            <h2 class="title has-text-white">Confiz</h2>
         </div>
     </div>
     <div class="detail-bande"></div>

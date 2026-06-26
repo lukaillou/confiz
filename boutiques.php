@@ -1,6 +1,5 @@
 <?php include_once("./header.php");
-include_once("bdd.php");
-?>
+include_once("bdd.php"); ?>
 
 <main>
     <a class="button is-rounded btn-retour" href="./index.php">
@@ -16,7 +15,7 @@ include_once("bdd.php");
                 <div class="column is-3">
                     <a href="./detail_boutiques.php?id=<?php echo $elem["id"]; ?>" class="card-boutique">
                         <div class="card">
-                            <div class="card-header" style="background-color: #04a28dff;">
+                            <div class="card-header">
                                 <p class="card-header-title has-text-white"><?php echo $elem["nom"]; ?></p>
                             </div>
                             <div class="card-image">
@@ -44,14 +43,15 @@ include_once("bdd.php");
                             <div class="column is-3">
                                 <a href="./boutique_gerant.php?id=<?php echo $elem["id"]; ?>" class="card-boutique">
                                     <div class="card">
-                                        <div class="card-header" style="background-color: #00b89c;">
+                                        <div class="card-header">
                                             <p class="card-header-title has-text-white">
                                                 <?php echo $elem["nom"]; ?>
                                             </p>
                                         </div>
                                         <div class="card-image">
                                             <figure class="image is-4by3">
-                                                <img src="./img/boutiques/<?php echo $elem["id"]; ?>.png" alt="<?php echo $elem["nom"]; ?>">
+                                                <img src="./img/boutiques/<?php echo $elem["id"]; ?>.png"
+                                                    alt="<?php echo $elem["nom"]; ?>">
                                             </figure>
                                         </div>
                                     </div>
