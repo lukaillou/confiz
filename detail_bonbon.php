@@ -57,6 +57,4 @@ $c = $confiserie[0]; ?>
     </div>
 </section>
 
-<a class="button is-rounded" href="confiseries.php">← Retour</a>
-
 <?php include_once("./footer.php") ?>
