@@ -4,7 +4,7 @@ include_once("bdd.php");
 
 <main
     style="background-image: url('./img/herbe.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; padding-bottom: 2rem;">
-    <a class="button is-rounded btn-retour" href="./detail_boutique.php">
+    <a class="button is-rounded btn-retour" href="./detail_boutiques.php">
         ← Retour
     </a>
     <div class="columns is-fullwidth" style="width:100%;">

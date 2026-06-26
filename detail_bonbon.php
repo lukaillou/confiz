@@ -55,6 +55,6 @@ $c = $confiserie[0]; ?>
             </div>
         </div>
     </div>
-</section>
+</section>  
 
 <?php include_once("./footer.php") ?>
