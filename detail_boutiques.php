@@ -15,6 +15,10 @@ $b = $boutique[0];
 <main
     style="background-image: url('./img/bluepaint.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; padding-bottom: 2rem;">
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     <a class="button is-rounded btn-retour" href="./boutiques.php">
         ← Retour
     </a>
@@ -40,7 +44,11 @@ $b = $boutique[0];
 
             <div class="column is-4 px-3">
                 <figure class="image is-4by3">
+<<<<<<< Updated upstream
                     <img src="./img/boutiques/<?php echo $b["id"]; ?>.png" alt="Photo boutique <?php echo $b["nom"]; ?>">
+=======
+                    <img src="./img/placeholder.png" alt="Photo boutique">
+>>>>>>> Stashed changes
                 </figure>
                 <p class="has-text-white mt-2">Photo boutique</p>
             </div>
