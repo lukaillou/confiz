@@ -1,16 +1,19 @@
 <?php
 session_start();
 include_once("db.php");
-
+// Vérifie si champs soumis 
 if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"])) {
 
     $existant = dbquery("SELECT * FROM utilisateurs WHERE username = ?", [$_POST["username"]]);
 
+// Vérifie si existe déjà en BDD
     if ($existant) {
         $erreur = "Ce nom d'utilisateur est déjà pris.";
     } else {
+        // Sécurise et hache le mot de passe avant stockage
         $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
+// Prépare la requête d'insertion d'un nouvel utilisateur 
         $stmt = $PDO->prepare("INSERT INTO utilisateurs (username, password, email, role, nom, prenom, ddn) VALUES (?, ?, ?, 'client', ?, ?, ?)");
         $stmt->execute([
             $_POST["username"],

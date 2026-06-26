@@ -6,7 +6,7 @@ if (!isset($_GET["id"])) {
     header("Location: boutiques.php");
     exit();
 }
-
+// Récupère l'ID et charge infos 
 $id = $_GET["id"];
 $boutique = dbquery("SELECT * FROM boutiques WHERE id = ?", [$id]);
 $b = $boutique[0];

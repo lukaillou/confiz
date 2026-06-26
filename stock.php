@@ -7,7 +7,7 @@ if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] !== "gerant") {
     header("Location: index.php");
     exit();
 }
-
+// Récupère l'ID du gérant connecté
 $user_id = $_SESSION["user"]["id"];
 
 if (empty($boutiques)) {
