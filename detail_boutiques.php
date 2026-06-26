@@ -55,6 +55,13 @@ $b = $boutique[0];
                     </p>
                     <a href="./confiseries.php?boutique_id=<?php echo $b["id"]; ?>"
                         class="button is-rounded mt-5 voir-produit">Voir produit</a>
+
+                    <?php if (isset($_SESSION["logged_in"]) && $_SESSION["user"]["role"] === "gerant" && $b["utilisateur_id"] == $_SESSION["user"]["id"]) { ?>
+                        <a href="./boutique_gerant.php?id=<?php echo $b["id"]; ?>"
+                            class="button is-rounded is-fullwidth mt-3" style="background-color: #333; color: white;">
+                            Gérer la boutique
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

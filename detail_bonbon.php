@@ -11,7 +11,8 @@ $id = $_GET["id"];
 $confiserie = dbquery("SELECT * FROM confiseries WHERE id = ?", [$id]);
 $c = $confiserie[0]; ?>
 
-<a class="button is-rounded btn-retour" href="./detail_bonbon.php">
+<a class="button is-rounded btn-retour"
+    href="./confiseries.php?boutique_id=<?php echo isset($_GET['boutique_id']) ? $_GET['boutique_id'] : ''; ?>">
     ← Retour
 </a>
 
